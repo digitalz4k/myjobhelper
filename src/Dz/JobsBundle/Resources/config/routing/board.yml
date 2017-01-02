@@ -1,0 +1,24 @@
+boards_index:
+    path:     /
+    defaults: { _controller: "JobsBundle:Board:index" }
+    methods:  GET
+
+boards_show:
+    path:     /{id}/show
+    defaults: { _controller: "JobsBundle:Board:show" }
+    methods:  GET
+
+boards_new:
+    path:     /new
+    defaults: { _controller: "JobsBundle:Board:new" }
+    methods:  [GET, POST]
+
+boards_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JobsBundle:Board:edit" }
+    methods:  [GET, POST]
+
+boards_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JobsBundle:Board:delete" }
+    methods:  DELETE

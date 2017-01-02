@@ -1,0 +1,32 @@
+body {
+    padding: 3vh;
+    font-size: 85%;
+    overflow: hidden;
+}
+.wrapper {
+    background: #24C6DC;
+    display: flex;
+    min-height: 94vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+nav {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0 4em;
+}
+
+a {
+    color: #AAAAAA;
+}
+
+footer {
+    background: none;
+    color: #C9C9C9;
+    font-size: .75rem;
+}

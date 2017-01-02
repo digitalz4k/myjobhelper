@@ -1,0 +1,8 @@
+.wrapper {
+    background: url('../img/bkg.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+#home {
+    margin: 8em 0;
+}

@@ -1,0 +1,15 @@
+jobs_entreprises:
+    resource: "@JobsBundle/Resources/config/routing/enterprise.yml"
+    prefix:   /entreprises
+
+jobs_boards:
+    resource: "@JobsBundle/Resources/config/routing/board.yml"
+    prefix:   /boards
+
+jobs_candidatures:
+    resource: "@JobsBundle/Resources/config/routing/application.yml"
+    prefix:   /candidatures
+
+jobs_homepage:
+    path:     /
+    defaults: { _controller: JobsBundle:Default:index }

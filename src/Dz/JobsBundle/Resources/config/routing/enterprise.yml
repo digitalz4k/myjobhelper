@@ -1,0 +1,24 @@
+entreprises_index:
+    path:     /
+    defaults: { _controller: "JobsBundle:Enterprise:index" }
+    methods:  GET
+
+entreprises_show:
+    path:     /{id}/show
+    defaults: { _controller: "JobsBundle:Enterprise:show" }
+    methods:  GET
+
+entreprises_new:
+    path:     /new
+    defaults: { _controller: "JobsBundle:Enterprise:new" }
+    methods:  [GET, POST]
+
+entreprises_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JobsBundle:Enterprise:edit" }
+    methods:  [GET, POST]
+
+entreprises_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JobsBundle:Enterprise:delete" }
+    methods:  DELETE

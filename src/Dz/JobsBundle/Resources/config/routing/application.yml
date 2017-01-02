@@ -1,0 +1,24 @@
+candidatures_index:
+    path:     /
+    defaults: { _controller: "JobsBundle:Application:index" }
+    methods:  GET
+
+candidatures_show:
+    path:     /{id}/show
+    defaults: { _controller: "JobsBundle:Application:show" }
+    methods:  GET
+
+candidatures_new:
+    path:     /new
+    defaults: { _controller: "JobsBundle:Application:new" }
+    methods:  [GET, POST]
+
+candidatures_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JobsBundle:Application:edit" }
+    methods:  [GET, POST]
+
+candidatures_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JobsBundle:Application:delete" }
+    methods:  DELETE

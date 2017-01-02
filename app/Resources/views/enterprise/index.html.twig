@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Enterprises list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Enterprisename</th>
+                <th>Enterpriselogourl</th>
+                <th>Enterprisedescription</th>
+                <th>Enterprisereferentfullname</th>
+                <th>Enterprisereferentemail</th>
+                <th>Enterprisereferentphone</th>
+                <th>Enterpriseaddress</th>
+                <th>Enterprisecity</th>
+                <th>Enterprisezip</th>
+                <th>Enterprisecountry</th>
+                <th>Enterprisegeolocationcoords</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for enterprise in enterprises %}
+            <tr>
+                <td><a href="{{ path('entreprises_show', { 'id': enterprise.id }) }}">{{ enterprise.id }}</a></td>
+                <td>{{ enterprise.enterpriseName }}</td>
+                <td>{{ enterprise.enterpriseLogoUrl }}</td>
+                <td>{{ enterprise.enterpriseDescription }}</td>
+                <td>{{ enterprise.enterpriseReferentFullname }}</td>
+                <td>{{ enterprise.enterpriseReferentEmail }}</td>
+                <td>{{ enterprise.enterpriseReferentPhone }}</td>
+                <td>{{ enterprise.enterpriseAddress }}</td>
+                <td>{{ enterprise.enterpriseCity }}</td>
+                <td>{{ enterprise.enterpriseZip }}</td>
+                <td>{{ enterprise.enterpriseCountry }}</td>
+                <td>{{ enterprise.enterpriseGeolocationCoords }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('entreprises_show', { 'id': enterprise.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('entreprises_edit', { 'id': enterprise.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('entreprises_new') }}">Create a new enterprise</a>
+        </li>
+    </ul>
+{% endblock %}

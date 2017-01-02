@@ -3,11 +3,44 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="wrapper">
+            <header>
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="/" class="brand-logo">MyJobHelper</a>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="/candidatures">Dashboard</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            <main class="container">
+                <div class="row">
+
+                    <div class="col s12">
+                        {% block body %}{% endblock %}
+                    </div>
+
+                </div>
+            </main>
+        </div>
+        <footer>
+            <div class="footer-copyright">
+                © 2017 Copyright - Created with love by <a href="mailto:balland.leonardo@outlook.fr" target="_blank">Leonardo BALLAND</a>
+                <a class="right" href="https://leonardoballand.com">leonardoballand.com</a>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

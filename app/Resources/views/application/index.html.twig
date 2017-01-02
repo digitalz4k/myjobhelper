@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col s12">
+            <h4 class="center-align">Mes candidatures</h4>
+
+            {% if applications %}
+                <ul>
+                    {% for application in applications %}
+                        <li>
+                            <h2>{{ application.application_job }}</h2>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="white-text center-align">{{ msg }}</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+           <div class="col s12 center-align">
+               <a href="{{ path('candidatures_new') }}" class="waves-effect waves-light btn btn-flat white black-text">Ajouter candidature</a>
+           </div>
+    </div>
+
+
+    </div>
+{% endblock %}

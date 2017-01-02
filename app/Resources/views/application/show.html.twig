@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Application</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ application.id }}</td>
+            </tr>
+            <tr>
+                <th>Applicationjob</th>
+                <td>{{ application.applicationJob }}</td>
+            </tr>
+            <tr>
+                <th>Applicationdescription</th>
+                <td>{{ application.applicationDescription }}</td>
+            </tr>
+            <tr>
+                <th>Applicationlink</th>
+                <td>{{ application.applicationLink }}</td>
+            </tr>
+            <tr>
+                <th>Applicationdate</th>
+                <td>{% if application.applicationDate %}{{ application.applicationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Applicationstatus</th>
+                <td>{{ application.applicationStatus }}</td>
+            </tr>
+            <tr>
+                <th>Applicationsalary</th>
+                <td>{{ application.applicationSalary }}</td>
+            </tr>
+            <tr>
+                <th>Applicationexperiencerequired</th>
+                <td>{{ application.applicationExperienceRequired }}</td>
+            </tr>
+            <tr>
+                <th>Applicationtype</th>
+                <td>{{ application.applicationType }}</td>
+            </tr>
+            <tr>
+                <th>Applicationcontract</th>
+                <td>{{ application.applicationContract }}</td>
+            </tr>
+            <tr>
+                <th>Applicationacceptdisabled</th>
+                <td>{% if application.applicationAcceptDisabled %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Applicationtags</th>
+                <td>{{ application.applicationTags }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('candidatures_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('candidatures_edit', { 'id': application.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Enterprise</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ enterprise.id }}</td>
+            </tr>
+            <tr>
+                <th>Enterprisename</th>
+                <td>{{ enterprise.enterpriseName }}</td>
+            </tr>
+            <tr>
+                <th>Enterpriselogourl</th>
+                <td>{{ enterprise.enterpriseLogoUrl }}</td>
+            </tr>
+            <tr>
+                <th>Enterprisedescription</th>
+                <td>{{ enterprise.enterpriseDescription }}</td>
+            </tr>
+            <tr>
+                <th>Enterprisereferentfullname</th>
+                <td>{{ enterprise.enterpriseReferentFullname }}</td>
+            </tr>
+            <tr>
+                <th>Enterprisereferentemail</th>
+                <td>{{ enterprise.enterpriseReferentEmail }}</td>
+            </tr>
+            <tr>
+                <th>Enterprisereferentphone</th>
+                <td>{{ enterprise.enterpriseReferentPhone }}</td>
+            </tr>
+            <tr>
+                <th>Enterpriseaddress</th>
+                <td>{{ enterprise.enterpriseAddress }}</td>
+            </tr>
+            <tr>
+                <th>Enterprisecity</th>
+                <td>{{ enterprise.enterpriseCity }}</td>
+            </tr>
+            <tr>
+                <th>Enterprisezip</th>
+                <td>{{ enterprise.enterpriseZip }}</td>
+            </tr>
+            <tr>
+                <th>Enterprisecountry</th>
+                <td>{{ enterprise.enterpriseCountry }}</td>
+            </tr>
+            <tr>
+                <th>Enterprisegeolocationcoords</th>
+                <td>{{ enterprise.enterpriseGeolocationCoords }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('entreprises_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('entreprises_edit', { 'id': enterprise.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
