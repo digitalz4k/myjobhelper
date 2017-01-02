@@ -1,0 +1,13 @@
+#newapplication {
+    background: whitesmoke;
+    padding: 2em;
+}
+
+#newapplication label {
+    font-size: 1rem;
+    color: #0088CC;
+}
+
+#newapplication input {
+    border-bottom: none;
+}

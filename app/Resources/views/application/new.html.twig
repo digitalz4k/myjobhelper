@@ -1,16 +1,128 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Application creation</h1>
+    <div id="newapplication" class="row">
+        <div class="col s12">
+            <h4 class="center-align blue-text text-lighten-4">Nouvelle candidature</h4>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select class="icons" id="application_enterprise_id" name="application_enterprise_id">
+                                <option value="" disabled selected>Choisir une entreprise</option>
+                                <option value="linxo_id" data-icon="{{ asset('img/linxo.jpeg') }}" class="left circle">Linxo</option>
+                                <option value="addixware_id" data-icon="{{ asset('img/addixware.png') }}" class="left circle">Addixware</option>
+                                <option value="wiko_id" data-icon="{{ asset('img/wiko.jpg') }}" class="left circle">Wiko</option>
+                            </select>
+                            <label for="application_enterprise_id">Quel est l'entreprise qui recrute ?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Indiquer le nom exact du poste" id="application_job" name="application_job" type="text" class="validate">
+                            <label for="application_job">Pour quel poste ?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Indiquez le lien de l'annonce" id="application_link" name="application_link" type="text" class="validate">
+                            <label for="application_link">Où se trouve l'annonce ?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="application_date">A quel date l'annonce a-t-elle été publiée ?</label>
+                        <div class="input-field col s12">
+                            <input id="application_date" name="application_date" type="date" class="validate datepicker">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Indiquer le salaire du poste" id="application_salary" name="application_salary" type="tel" class="validate">
+                            <label for="application_salary">Quel est le salaire proposé ?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Indiquer le nombre d'années d'expérience requis" id="application_experience_required" name="application_experience_required" type="tel" class="validate">
+                            <label for="application_experience_required">Combien d'années d'expérience est demandé ?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="application_type" name="application_type">
+                                <option value="" disabled selected>Choisir le nombre d'heures travaillées</option>
+                                <option value="temps plein">A temps plein</option>
+                                <option value="temps partiel">A temps partiel</option>
+                            </select>
+                            <label>Vous travaillerez</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="application_contract" name="application_contract">
+                                <option value="" disabled selected>Choisir un type de contrat</option>
+                                <option value="CDI">CDI</option>
+                                <option value="CDD">CDD</option>
+                                <option value="Stage">Stage</option>
+                                <option value="Interim">Interim</option>
+                                <option value="Freelance">Freelance</option>
+                            </select>
+                            <label for="application_contract">Quel est le type du contrat proposé ?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select class="icons"  id="application_from" name="application_from">
+                                <option value="" disabled selected>Choisir une board</option>
+                                <option value="poleemploi_id" data-icon="{{ asset('img/poleemploi.png') }}" class="left circle">Pôle Emploi</option>
+                                <option value="jechercheundevfr_id" data-icon="{{ asset('img/jcud.jpg') }}" class="left circle">Jechercheundev.fr</option>
+                                <option value="toptal_id" data-icon="{{ asset('img/toptal.png') }}" class="left circle">Toptal</option>
+                                <option value="monster_id" data-icon="{{ asset('img/monster.png') }}" class="left circle">Monster</option>
+                            </select>
+                            <label for="application_from">L'annonce est visible sur quel board ?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="application_description" name="application_description" class="materialize-textarea" class="validate"></textarea>
+                            <label for="application_description">Contenu de l'offre d'emploi</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Séparer les tags par des virgules" id="application_tags" name="application_tags" type="text" class="validate">
+                            <label for="application_tags">Ajouter des tags</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="application_accept_disabled" name="application_accept_disabled" type="checkbox" class="filled-in">
+                            <label for="application_accept_disabled">Handicap friendly ?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class="waves-effect waves-light btn btn-flat white black-text">Ajouter</button>
+                        </div>
+                    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('candidatures_index') }}">Back to the list</a>
-        </li>
-    </ul>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href="{{ path('candidatures_index') }}" class="waves-effect waves-light btn btn-flat white black-text">Retour à la liste</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/applications.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/forms.js') }}"></script>
 {% endblock %}

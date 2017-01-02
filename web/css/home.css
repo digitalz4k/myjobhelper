@@ -1,5 +1,9 @@
+body {
+    padding: 3vh;
+    overflow: hidden;
+}
 .wrapper {
-    background: url('../img/bkg.jpg') no-repeat center center;
+    background: url('../img/background.jpg') no-repeat center center;
     background-size: cover;
 }
 
